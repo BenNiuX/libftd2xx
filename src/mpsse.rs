@@ -181,7 +181,7 @@ pub trait FtdiMpsse: FtdiCommon {
         self.set_timeouts(settings.read_timeout, settings.write_timeout)?;
         self.set_latency_timer(settings.latency_timer)?;
         self.set_flow_control_rts_cts()?;
-        self.set_bit_mode(0x0, BitMode::Reset)?;
+        // self.set_bit_mode(0x0, BitMode::Reset)?;
         self.set_bit_mode(settings.mask, BitMode::Mpsse)?;
         self.enable_loopback()?;
         self.synchronize_mpsse()?;
